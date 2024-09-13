@@ -103,7 +103,7 @@ To contribute to this project, follow these steps:
 
 1. **Fork the repository**: This will create a personal copy of the project on your GitHub account.
 2. **Make the necessary changes**: Ensure that the textures you modify or add are updated in all four texture versions (`4K PNG`, `4K DDS`, `HD PNG`, and `HD DDS`). Consistency across the packs is required.
-3. **Open a pull request**: Pull requests should be opened on the `dev` branch, not the `main` branch. Be sure to explain the changes made in the pull request description.
+3. **Open a pull request**: Pull requests should be opened on the `main` branch. Be sure to explain the changes made in the pull request description.
 4. **Submit the pull request**: After submission, your changes will be reviewed, and if they meet the requirements (i.e., all texture versions are updated), the pull request will be merged.
 
 ### **Important Notes for Contributing:**
