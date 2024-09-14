@@ -120,6 +120,7 @@ For discussions, suggestions, or questions, feel free to join the **Super Mario 
 - **iZePlayz**: Creator of the HD and 4K textures.
 - **AlexWolfz**: Converted the textures to DDS format.
 - **Venomalia**: Created the Dolphin Texture Dumping tool and upscaling models.
+- **CoNesTra**: Created the autosave and loading icons
 
 ---
 
