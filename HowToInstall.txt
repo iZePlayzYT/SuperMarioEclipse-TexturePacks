@@ -1,0 +1,41 @@
+Super Mario Eclipse – 4K Texture Pack (DDS)
+
+This texture pack was created for Super Mario Eclipse, a ROM hack of Super Mario Sunshine.
+It improves the visuals with high-resolution textures optimized for Dolphin Emulator.
+👉 The texture pack is also FULLY COMPATIBLE with original (vanilla) Super Mario Sunshine.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTALLATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Install the latest version of Dolphin Emulator:
+   https://dolphin-emu.org/
+
+2. Enable custom textures:
+   - In Dolphin, go to Graphics Settings → Advanced
+   - Enable: Load Custom Textures
+   - Disable: Prefetch Custom Textures
+
+3. From this ZIP, copy the included "GMSE04" folder into your Load/Textures directory:
+   Windows: C:\Users\<YourUsername>\AppData\Roaming\Dolphin Emulator\Load\Textures\
+   macOS:   ~/Library/Application Support/Dolphin/Load/Textures/
+   Linux:   ~/.local/share/dolphin-emu/Load/Textures/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MORE INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PNG textures and unmodified texture dumps are available in the GitHub repository:
+https://github.com/iZePlayzYT/SuperMarioEclipse-TexturePack
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CREDITS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- iZePlayz — Creator of the HD and 4K textures
+- AlexWolfz — Converted the textures to DDS format
+- Venomalia — Created the Dolphin Texture Dumping tool and upscaling models
+- CoNesTra — Created the autosave and loading icons
+- CanOfDarkFruit — Added many textures people created and posted in Discord
+- Many other people from the Super Mario Eclipse Discord Server!
+  https://discord.com/invite/u6NHuHVRpJ

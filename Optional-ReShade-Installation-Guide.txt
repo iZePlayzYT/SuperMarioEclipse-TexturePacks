@@ -1,9 +1,10 @@
-1. Close Dolphin if it’s open.
+ReShade is completely optional and not part of this texture pack. You can use the texture pack without it. ReShade is a post-processing layer: it adjusts the image after Dolphin has drawn it (for example colour grading, sharpening, bloom). It does not replace or load game textures; it only changes how the picture looks on your screen.
+1. Close Dolphin if it's open.
 2. Download the latest version of Reshade with full add-on support from here: https://reshade.me/#download
 3. Run the Reshade installer that you just downloaded.
 4. Click Browse and find your Dolphin.exe file (usually in the folder where Dolphin is installed).
 5. Select the same rendering API (DirectX, OpenGL, Vulkan, etc.) that you're using in Dolphin (you can check this in Dolphin's settings).
 6. Follow the rest of the installation steps.
-7. After the installation is finished, download the eclipse_reshade_preset.ini file from the OTHER_FILES folder in this repository, and move it to the same folder where your Dolphin.exe is located.
+7. After the installation is finished, put the eclipse_reshade_preset.ini file into the same folder where your Dolphin.exe is located.
 8. Open Dolphin, Start the game and go to the Reshade menu, and select the preset file. Then, adjust the settings however you like.
 9. Enjoy playing the game!
