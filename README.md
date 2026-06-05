@@ -121,7 +121,7 @@ For discussions, suggestions, or questions, feel free to join the **Super Mario 
 - **AlexWolfz**: Converted the textures to DDS format.
 - **Venomalia**: Created the Dolphin Texture Dumping tool and upscaling models.
 - **CoNesTra**: Created the autosave and loading icons.
-- **KaonsYT**: Created some HUD Texture for the characters and water meter.
+- **KaonsYT**: Created somes HUD Texture for the characters and water meter.
 - **CanOfDarkFruit**: Added many textures people created and posted in discord.
 - **Many other people from the Super Mario Eclipse Discord Server!**
 
