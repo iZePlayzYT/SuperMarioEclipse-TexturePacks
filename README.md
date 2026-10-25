@@ -1,132 +1,135 @@
-# **Super Mario Eclipse - 4K & HD Custom Texture Packs**
+# **Super Mario Eclipse - High-Res Texture Pack**
 
-This repository contains 4K and HD texture packs for **Super Mario Eclipse**, a modification of Super Mario Sunshine. The texture packs significantly enhance the visual quality of the game and are available in both PNG and DDS formats, depending on performance and quality requirements in the Dolphin Emulator.
+This repository contains a high-resolution texture pack for **Super Mario Eclipse**, a modification of Super Mario Sunshine. The same pack also works with vanilla Super Mario Sunshine.
+
+The repository stores the pack as PNG and as DDS. The **release** is the DDS pack only. PNG is the working copy used for editing and upscaling.
 
 ## **Table of Contents**
-1. [Texture Packs](#texture-packs)
+1. [Texture Pack](#texture-pack)
 2. [How to Install Custom Textures in Dolphin](#how-to-install-custom-textures-in-dolphin)
 3. [Upscaling Process](#upscaling-process)
-4. [Unmodified Texture Dumps](#unmodified-texture-dumps)
-5. [Texture Dumping Tool](#texture-dumping-tool)
-6. [Contributing](#contributing)
-7. [Credits](#credits)
+4. [Converting PNG to DDS](#converting-png-to-dds)
+5. [Unmodified Texture Dumps](#unmodified-texture-dumps)
+6. [Texture Dumping Tool](#texture-dumping-tool)
+7. [Contributing](#contributing)
+8. [Credits](#credits)
+9. [Contact](#contact)
 
 ---
 
-## **Texture Packs**
+## **Texture Pack**
 
-There are four different versions of the texture packs available for download in the **Releases** section of the main branch:
+The pack is stored in two folders:
 
-- **4K PNG Texture Pack**: Offers maximum visual quality.
-- **HD PNG Texture Pack**: Provides high quality while maintaining a balance between quality and performance.
-- **4K DDS Texture Pack**: Optimized for faster loading times while retaining 4K textures.
-- **HD DDS Texture Pack**: Optimized for performance with fast loading times and high-quality textures.
-
-Each version is designed to meet different performance needs, ensuring users can choose based on their hardware capabilities.
+- `PNG/GMSE04` holds the upscaled PNG source files.
+- `DDS/GMSE04` holds the converted DDS files that Dolphin loads. This is the folder published in **Releases**.
 
 ---
 
 ## **How to Install Custom Textures in Dolphin**
 
 ### **1. Preparing Dolphin Emulator**
-Ensure that the latest version of Dolphin Emulator is installed. The latest version can be downloaded from [https://dolphin-emu.org/](https://dolphin-emu.org/).
+Install the latest Dolphin from [https://dolphin-emu.org/](https://dolphin-emu.org/).
 
 ### **2. Configuring Dolphin Emulator Settings**
-The following settings must be enabled in Dolphin to correctly load the custom textures:
+In `Graphics Settings` > `Advanced`:
 
-1. Open Dolphin Emulator.
-2. Go to `Graphics Settings` > `Advanced` tab and enable:
-   - **Load Custom Textures**: This setting allows the emulator to load external texture packs.
-   - **Prefetch Custom Textures** (Optional): Improves performance by preloading all textures into memory.
+- Enable **Load Custom Textures**.
+- Disable **Prefetch Custom Textures**.
 
 ### **3. Increasing Internal Resolution**
-To display high-resolution textures correctly, it is essential to adjust the internal resolution:
-
-1. Go to `Graphics Settings` > `Enhancements` tab.
-2. Set the **Internal Resolution** according to your display and hardware capabilities:
-   - For 1080p displays, the HD texture pack is recommended for better performance.
-   - If your system is capable, the 4K texture pack can be used even on a 1080p display, as it provides better quality than the HD pack.
-   - For 1440p (2K) or higher displays, the difference between the HD and 4K packs becomes more apparent. Using the 4K pack is recommended for the best visual experience.
-
-   **Note**: Adjusting the internal resolution is necessary to properly display high-resolution textures. Without this adjustment, the textures may not appear as intended.
+In `Graphics Settings` > `Enhancements`, set **Internal Resolution** to match the display. A higher internal resolution shows more of the texture detail.
 
 ### **4. Place Textures in the Correct Directory**
-Navigate to Dolphin Emulator’s **User Directory**:
+Dolphin's user directory:
 
-- **Windows**: Go to `C:\Users\<YourUsername>\AppData\Roaming\Dolphin Emulator\Load\Textures\`. You can also quickly access this by typing `%appdata%` in the Windows search bar, then navigating to `Dolphin Emulator/Load/Textures/`.
-- **macOS**: Navigate to `~/Library/Application Support/Dolphin/Load/Textures/`.
-- **Linux**: Navigate to `~/.local/share/dolphin-emu/Load/Textures/`.
+- **Windows**: `%appdata%\Dolphin Emulator\Load\Textures\`
+- **macOS**: `~/Library/Application Support/Dolphin/Load/Textures/`
+- **Linux**: `~/.local/share/dolphin-emu/Load/Textures/`
 
-Place the texture files directly in the `GMSE04` folder inside the `Load/Textures` directory.
+The release zip contains a `GMSE04` folder. Copy that folder into `Load/Textures`.
 
-**Important:**
-- If the texture pack you downloaded already contains a `GMSE04` folder, do **not** copy the entire folder into `Load/Textures/GMSE04`. Instead, open the `GMSE04` folder from the texture pack and place its contents directly into `Load/Textures/GMSE04`.
-- If the texture pack contains only the texture files (without a `GMSE04` folder), place those texture files directly into `Load/Textures/GMSE04`.
-- If the `GMSE04` folder doesn’t exist in the `Load/Textures` directory, create it manually and place the files there.
+If `Load/Textures/GMSE04` already exists, rename or delete that folder before copying the new one in. To combine this pack with another texture pack, leave the existing folder in place, copy the new files into it, and overwrite files that share the same path.
 
 ### **5. Launching the Game**
-Once the textures are placed in the correct folder and the settings are configured, launch **Super Mario Eclipse** in Dolphin. The custom textures will load automatically.
+Start **Super Mario Eclipse** in Dolphin. The DDS textures load automatically.
 
 ---
 
 ## **Upscaling Process**
 
-Follow these steps to upscale textures using **Chainner**:
+Upscale with **chaiNNer**:
 
-1. Download and install the latest version of Chainner here: [https://github.com/chaiNNer-org/chaiNNer/releases](https://github.com/chaiNNer-org/chaiNNer/releases).  
-2. Install all packages ("PyTorch", "NCNN", "ONNX" including all sub-packages of each package) in the Dependency Manager of Chainner.  
-3. Download & open the chain from `OTHER_FILES/UPSCALING.chn` in Chainner and get the 4 different models used in the chain from here: [https://github.com/Venomalia/Hdcube](https://github.com/Venomalia/Hdcube).  
-4. In Chainner, after you have loaded the chain, change the paths of the **input** and **output** folders as well as the paths for the 4 models used in the chain.  
-5. Press the **Start** button to begin upscaling and wait until it’s finished. (Tip: Press the **Lock Icon** in the bottom left of Chainner to prevent accidentally modifying the chain while it's running).
+1. Install the latest chaiNNer from [https://github.com/chaiNNer-org/chaiNNer/releases](https://github.com/chaiNNer-org/chaiNNer/releases).
+2. In the Dependency Manager, install `PyTorch`, `NCNN`, and `ONNX`, including every sub-package.
+3. Open `OTHER_FILES/UPSCALING.chn` and download the four models from [https://github.com/Venomalia/Hdcube](https://github.com/Venomalia/Hdcube).
+4. Set the input folder, the output folder, and the four model paths.
+5. Press **Start**. The lock icon at the bottom left stops accidental edits while the chain is running.
+
+Keep each upscaled PNG at the same relative path it had under `PNG/GMSE04`, so it replaces the existing file instead of sitting next to it in another folder.
+
+---
+
+## **Converting PNG to DDS**
+
+Dolphin loads the DDS files. After a PNG is added or replaced, convert it with **[Custom Texture Tool PS](https://github.com/BigheadSMZ/Custom-Texture-Tool-PS)** and put the DDS at the same path under `DDS/GMSE04`.
+
+**Settings:**
+
+<img width="563" height="785" alt="Custom Texture Tool PS settings" src="OTHER_FILES/ctt-ps-dds-settings.png"/>
+
+Keep the Dolphin filename and change only the extension from `.png` to `.dds`. The folder path under `DDS/GMSE04` must match the PNG. A different subfolder leaves the old DDS in place.
+
+Textures with `_m_` in the name are mipmapped by the game. If one of those turns into a color smear at high internal resolution, convert that file again with **Disable Mipmap Generation** enabled, so the DDS keeps a single mip level.
 
 ---
 
 ## **Unmodified Texture Dumps**
 
-The repository contains original, unmodified textures dumped from Super Mario Eclipse. These textures can be found in the `TEXTURE_DUMPS/GMSE04` folder and can be used for reference or modification. These are the base textures extracted from the game before any enhancements.
+Original dumps, before any upscale:
+
+- `TEXTURE_DUMPS_ECLIPSE/GMSE04` is Super Mario Eclipse.
+- `TEXTURE_DUMPS_PAL_VANILLA/GMSP01` is PAL Super Mario Sunshine.
+
+Use the same relative path as `PNG/GMSE04` and `DDS/GMSE04` when adding a dumped texture, so a later copy overwrites the existing file.
 
 ---
 
 ## **Texture Dumping Tool**
 
-For those interested in extracting textures, the **DolphinTextureExtraction-tool** can be used to dump textures from the game. This tool is useful for both standard and custom texture creation.
+Textures can be extracted with **DolphinTextureExtraction-tool**:
 
 - **Download**: [https://github.com/Venomalia/DolphinTextureExtraction-tool](https://github.com/Venomalia/DolphinTextureExtraction-tool)
 
-> **Note**: Some textures, such as HUD, UI, and font textures, may need to be manually dumped, as not all textures are automatically captured by the tool.
+HUD, UI, and font textures are not all captured automatically and may need a manual dump.
 
 ---
 
 ## **Contributing**
 
-To contribute to this project, follow these steps:
+1. Fork the repository.
+2. Add or replace the PNG in `PNG/GMSE04` and the matching DDS in `DDS/GMSE04`, at the same relative path.
+3. Open a pull request against `main` and describe the change.
 
-1. **Fork the repository**: This will create a personal copy of the project on your GitHub account.
-2. **Make the necessary changes**: Ensure that the textures you modify or add are updated in all four texture versions (`4K PNG`, `4K DDS`, `HD PNG`, and `HD DDS`). Consistency across the packs is required.
-3. **Open a pull request**: Pull requests should be opened on the `main` branch. Be sure to explain the changes made in the pull request description.
-4. **Submit the pull request**: After submission, your changes will be reviewed, and if they meet the requirements (i.e., all texture versions are updated), the pull request will be merged.
+A change that updates only the PNG, or that puts the DDS in a different subfolder, will not be merged. The release is built from `DDS/GMSE04`.
 
-### **Important Notes for Contributing:**
-- Pull requests **must** apply updates to **all four texture packs** (`4K PNG`, `4K DDS`, `HD PNG`, and `HD DDS`). This ensures that all versions remain synchronized.
-- Contributions that update only one or a few of the packs will not be merged.
-
-For discussions, suggestions, or questions, feel free to join the **Super Mario Eclipse Discord Server**:  
+Questions and suggestions: **Super Mario Eclipse Discord**  
 [https://discord.com/invite/u6NHuHVRpJ](https://discord.com/invite/u6NHuHVRpJ)
 
 ---
 
 ## **Credits**
 
-- **iZePlayz**: Creator of the HD and 4K textures.
-- **AlexWolfz**: Converted the textures to DDS format.
-- **Venomalia**: Created the Dolphin Texture Dumping tool and upscaling models.
-- **CoNesTra**: Created the autosave and loading icons.
-- **KaonsYT**: Created somes HUD Texture for the characters and water meter.
-- **CanOfDarkFruit**: Added many textures people created and posted in discord.
-- **Many other people from the Super Mario Eclipse Discord Server!**
+- **iZePlayz**: Creator of the high-resolution textures.
+- **AlexWolfz**: Converted the textures to DDS.
+- **Venomalia**: Dolphin texture dumping tool and upscaling models.
+- **CoNesTra**: Autosave and loading icons.
+- **KaonsYT**: HUD textures for the characters and the water meter.
+- **CanOfDarkFruit**: Textures made and shared on Discord.
+- **Many other people from the Super Mario Eclipse Discord Server.**
 
 ---
 
 ## **Contact**
 
-For inquiries or further assistance, please reach out via GitHub or the Discord server.
+GitHub or the Discord server linked above.
