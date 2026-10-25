@@ -1,28 +1,30 @@
-# **Super Mario Eclipse - 4K & HD Custom Texture Packs**
+# **Super Mario Eclipse - Custom Texture Pack**
 
-This repository contains 4K and HD texture packs for **Super Mario Eclipse**, a modification of Super Mario Sunshine. The texture packs significantly enhance the visual quality of the game and are available in both PNG and DDS formats, depending on performance and quality requirements in the Dolphin Emulator.
+This repository contains a custom texture pack for **Super Mario Eclipse**, a modification of Super Mario Sunshine. The texture pack significantly enhances the visual quality of the game and is available in the **Releases** section of the main branch.
+
+Earlier releases provided separate HD and 4K versions. These versions have now been merged into a single texture pack. The current version is based mostly on the former 4K pack, while some extremely large textures were reduced in resolution where the difference would not be visible in-game. This keeps the visual quality very close to the previous 4K version while reducing the overall file size.
 
 ## **Table of Contents**
-1. [Texture Packs](#texture-packs)
+1. [Texture Pack](#texture-pack)
 2. [How to Install Custom Textures in Dolphin](#how-to-install-custom-textures-in-dolphin)
 3. [Upscaling Process](#upscaling-process)
 4. [Unmodified Texture Dumps](#unmodified-texture-dumps)
 5. [Texture Dumping Tool](#texture-dumping-tool)
 6. [Contributing](#contributing)
 7. [Credits](#credits)
+8. [Contact](#contact)
 
 ---
 
-## **Texture Packs**
+## **Texture Pack**
 
-There are four different versions of the texture packs available for download in the **Releases** section of the main branch:
+The current release contains a single texture pack. It replaces the previous separate HD and 4K versions.
 
-- **4K PNG Texture Pack**: Offers maximum visual quality.
-- **HD PNG Texture Pack**: Provides high quality while maintaining a balance between quality and performance.
-- **4K DDS Texture Pack**: Optimized for faster loading times while retaining 4K textures.
-- **HD DDS Texture Pack**: Optimized for performance with fast loading times and high-quality textures.
+The old HD version was primarily a downscaled version of the higher-resolution textures, while the old 4K version used the original higher-resolution textures. In the current merged version, around 95-98% of the textures are still based on the former 4K version.
 
-Each version is designed to meet different performance needs, ensuring users can choose based on their hardware capabilities.
+Some very large textures were reduced in resolution because they are never displayed at their full size in-game. For example, if a texture is much larger than what can be shown on a 4K display, Dolphin or the game would downscale it anyway. In those cases, reducing the texture resolution does not create a visible difference during gameplay, but it helps reduce the download size and storage requirements.
+
+In practice, the current texture pack should look very similar to the previous 4K pack while being smaller and easier to distribute.
 
 ---
 
@@ -37,21 +39,20 @@ The following settings must be enabled in Dolphin to correctly load the custom t
 1. Open Dolphin Emulator.
 2. Go to `Graphics Settings` > `Advanced` tab and enable:
    - **Load Custom Textures**: This setting allows the emulator to load external texture packs.
-   - **Prefetch Custom Textures** (Optional): Improves performance by preloading all textures into memory.
+   - **Prefetch Custom Textures** (Optional): Improves performance by preloading all textures into memory. This may require more RAM.
 
 ### **3. Increasing Internal Resolution**
-To display high-resolution textures correctly, it is essential to adjust the internal resolution:
+To display high-resolution textures correctly, it is recommended to increase the internal resolution:
 
 1. Go to `Graphics Settings` > `Enhancements` tab.
-2. Set the **Internal Resolution** according to your display and hardware capabilities:
-   - For 1080p displays, the HD texture pack is recommended for better performance.
-   - If your system is capable, the 4K texture pack can be used even on a 1080p display, as it provides better quality than the HD pack.
-   - For 1440p (2K) or higher displays, the difference between the HD and 4K packs becomes more apparent. Using the 4K pack is recommended for the best visual experience.
+2. Set the **Internal Resolution** according to your display and hardware capabilities.
 
-   **Note**: Adjusting the internal resolution is necessary to properly display high-resolution textures. Without this adjustment, the textures may not appear as intended.
+For the best visual result, use an internal resolution that matches or exceeds your display resolution. Lower internal resolutions may still work, but the texture pack may not appear as sharp as intended.
+
+> **Note**: The native-resolution goop graphics hack is not recommended while using this texture pack, as it can prevent some enhanced textures from being displayed as intended.
 
 ### **4. Place Textures in the Correct Directory**
-Navigate to Dolphin Emulator’s **User Directory**:
+Navigate to Dolphin Emulator's **User Directory**:
 
 - **Windows**: Go to `C:\Users\<YourUsername>\AppData\Roaming\Dolphin Emulator\Load\Textures\`. You can also quickly access this by typing `%appdata%` in the Windows search bar, then navigating to `Dolphin Emulator/Load/Textures/`.
 - **macOS**: Navigate to `~/Library/Application Support/Dolphin/Load/Textures/`.
@@ -61,8 +62,8 @@ Place the texture files directly in the `GMSE04` folder inside the `Load/Texture
 
 **Important:**
 - If the texture pack you downloaded already contains a `GMSE04` folder, do **not** copy the entire folder into `Load/Textures/GMSE04`. Instead, open the `GMSE04` folder from the texture pack and place its contents directly into `Load/Textures/GMSE04`.
-- If the texture pack contains only the texture files (without a `GMSE04` folder), place those texture files directly into `Load/Textures/GMSE04`.
-- If the `GMSE04` folder doesn’t exist in the `Load/Textures` directory, create it manually and place the files there.
+- If the texture pack contains only the texture files without a `GMSE04` folder, place those texture files directly into `Load/Textures/GMSE04`.
+- If the `GMSE04` folder does not exist in the `Load/Textures` directory, create it manually and place the files there.
 
 ### **5. Launching the Game**
 Once the textures are placed in the correct folder and the settings are configured, launch **Super Mario Eclipse** in Dolphin. The custom textures will load automatically.
@@ -71,13 +72,13 @@ Once the textures are placed in the correct folder and the settings are configur
 
 ## **Upscaling Process**
 
-Follow these steps to upscale textures using **Chainner**:
+Follow these steps to upscale textures using **chaiNNer**:
 
-1. Download and install the latest version of Chainner here: [https://github.com/chaiNNer-org/chaiNNer/releases](https://github.com/chaiNNer-org/chaiNNer/releases).  
-2. Install all packages ("PyTorch", "NCNN", "ONNX" including all sub-packages of each package) in the Dependency Manager of Chainner.  
-3. Download & open the chain from `OTHER_FILES/UPSCALING.chn` in Chainner and get the 4 different models used in the chain from here: [https://github.com/Venomalia/Hdcube](https://github.com/Venomalia/Hdcube).  
-4. In Chainner, after you have loaded the chain, change the paths of the **input** and **output** folders as well as the paths for the 4 models used in the chain.  
-5. Press the **Start** button to begin upscaling and wait until it’s finished. (Tip: Press the **Lock Icon** in the bottom left of Chainner to prevent accidentally modifying the chain while it's running).
+1. Download and install the latest version of chaiNNer here: [https://github.com/chaiNNer-org/chaiNNer/releases](https://github.com/chaiNNer-org/chaiNNer/releases).  
+2. Install all packages (`PyTorch`, `NCNN`, and `ONNX`, including all sub-packages of each package) in the Dependency Manager of chaiNNer.  
+3. Download and open the chain from `OTHER_FILES/UPSCALING.chn` in chaiNNer and get the four different models used in the chain from here: [https://github.com/Venomalia/Hdcube](https://github.com/Venomalia/Hdcube).  
+4. In chaiNNer, after you have loaded the chain, change the paths of the **input** and **output** folders as well as the paths for the four models used in the chain.  
+5. Press the **Start** button to begin upscaling and wait until it is finished. Tip: Press the **Lock Icon** in the bottom left of chaiNNer to prevent accidentally modifying the chain while it is running.
 
 ---
 
@@ -102,13 +103,14 @@ For those interested in extracting textures, the **DolphinTextureExtraction-tool
 To contribute to this project, follow these steps:
 
 1. **Fork the repository**: This will create a personal copy of the project on your GitHub account.
-2. **Make the necessary changes**: Ensure that the textures you modify or add are updated in all four texture versions (`4K PNG`, `4K DDS`, `HD PNG`, and `HD DDS`). Consistency across the packs is required.
-3. **Open a pull request**: Pull requests should be opened on the `main` branch. Be sure to explain the changes made in the pull request description.
-4. **Submit the pull request**: After submission, your changes will be reviewed, and if they meet the requirements (i.e., all texture versions are updated), the pull request will be merged.
+2. **Make the necessary changes**: Modify or add the relevant texture files in the current texture pack structure.
+3. **Open a pull request**: Pull requests should be opened on the `dev` branch. Be sure to explain the changes made in the pull request description.
+4. **Submit the pull request**: After submission, your changes will be reviewed. If they meet the project requirements, they may be merged.
 
 ### **Important Notes for Contributing:**
-- Pull requests **must** apply updates to **all four texture packs** (`4K PNG`, `4K DDS`, `HD PNG`, and `HD DDS`). This ensures that all versions remain synchronized.
-- Contributions that update only one or a few of the packs will not be merged.
+- The texture pack now uses a single merged version instead of separate HD and 4K versions.
+- Please make sure your changes fit the current pack structure and do not reintroduce separate HD or 4K texture versions.
+- Pull requests should target the `dev` branch, not the `main` branch.
 
 For discussions, suggestions, or questions, feel free to join the **Super Mario Eclipse Discord Server**:  
 [https://discord.com/invite/u6NHuHVRpJ](https://discord.com/invite/u6NHuHVRpJ)
@@ -117,12 +119,12 @@ For discussions, suggestions, or questions, feel free to join the **Super Mario 
 
 ## **Credits**
 
-- **iZePlayz**: Creator of the HD and 4K textures.
+- **iZePlayz**: Creator of the HD and 4K textures and the merged texture pack.
 - **AlexWolfz**: Converted the textures to DDS format.
 - **Venomalia**: Created the Dolphin Texture Dumping tool and upscaling models.
 - **CoNesTra**: Created the autosave and loading icons.
-- **KaonsYT**: Created somes HUD Texture for the characters and water meter.
-- **CanOfDarkFruit**: Added many textures people created and posted in discord.
+- **KaonsYT**: Created some HUD textures for the characters and water meter.
+- **CanOfDarkFruit**: Added many textures created and shared by people on Discord.
 - **Many other people from the Super Mario Eclipse Discord Server!**
 
 ---
